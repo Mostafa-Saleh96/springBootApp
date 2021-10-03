@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.urltraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body align="center">
+        <h1 align="center" > news </h1><br>
+        <form align="center" action="/adminLogin" method="post" >
+            <table border="0" >
+                <tbody align="center">
+                    <tr><td><h4>Title:</h4></td><td> <div class="form-group"><input type="text" th:value="${pr.title}" class="form-control" name="title" ></div></td></tr>
+                    <tr><td><h4>Description:</h4></td><td><textarea name="description">[[${pr.description}]]</textarea></div></td></tr>
+                    <tr th:each="product:${pr}"><td colspan="2" align="center" scope="row"><img alt="" th:src="*{'data:image/jpeg;base64,'+{product.image}}"style="width:250px;height: 100px; "></td></tr>
+                    <tr ><td colspan="2" align="center"><input type="submit" value="update" /></td></tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
+        </form>
+
+    </body>
+</html>
